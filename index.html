@@ -1,2 +1,30 @@
+<!-- Ignore this <div>, it just displays the information about the turorial. If you find it distracting, feel free to delete it. -->
+<div id="info"></div>
 
-"Hello World"
+<!-- The code for the tutorial starts here -->
+<div id="myNumber"></div>
+<!-- Your number will appear in here -->Click <a href="no-javascript.html" id="getNumber">here</a> to get your number.
+<!-- Link to get number. If the user has no JS enabled it will redirect to no-javascript.html -->
+<br /><br />
+<pre style="font-size:90%">
+&lt;html&gt;
+&lt;head&gt;
+     &lt;title&gt;Generating a Random Number&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+     &lt;div id=&quot;myNumber&quot;&gt;&lt;/div&gt;
+     Click &lt;a href=&quot;no-javascript.html&quot; id=&quot;getNumber&quot;&gt;here&lt;/a&gt; to get your number.
+     &lt;script&gt;
+          var link = document.getElementById('getNumber');
+          link.onclick = getNumber;
+          function getNumber() {
+               var minNumber = 0;
+               var maxNumber = 100;
+               var randomnumber = Math.floor(Math.random() * (maxNumber + 1) + minNumber);
+               $('#myNumber').html(randomnumber);
+               return false;
+          }
+     &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
